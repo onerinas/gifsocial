@@ -6,6 +6,14 @@ class MomentsController < ApplicationController
     @moments = Moment.order(created_at: :desc)
   end
 
+  def search_gif
+    @gifs = Moment.search_gif(params[:wassup])
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   # GET /moments/1 or /moments/1.json
   def show
   end

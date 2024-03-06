@@ -11,4 +11,17 @@
 class Moment < ApplicationRecord
   validates :gif_url, presence: true
   validates :wassup, length: { maximum: 100 }
+
+  def self.search_gif(wassup)
+    return [] if wassup.blank?
+
+    response = HTTParty.get("https://tenor.googleapis.com/v2/search?q=#{wassup}&key=#{Rails.application.credentials.tenor_api_key}&limit=9")
+
+    response["results"].map do |result|
+      {
+        tinygif: result["media_formats"]["tinygif"]["url"],
+        gif: result["media_formats"]["gif"]["url"]
+      }
+    end
+  end
 end

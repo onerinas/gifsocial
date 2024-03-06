@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "strong_migrations", "~> 1.7"
+
+gem "httparty", "~> 0.21.0"

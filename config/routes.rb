@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :moments, only: [:index, :show, :new, :create]
+  resources :moments, only: [:index, :show, :new, :create] do
+    collection do
+      get :search_gif
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

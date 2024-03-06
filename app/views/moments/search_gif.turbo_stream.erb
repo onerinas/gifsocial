@@ -1,0 +1,12 @@
+<%= turbo_stream.replace :search_gif_results do %>
+  <%= turbo_frame_tag :search_gif_results do %>
+
+  <p class="pb-4">
+    Right click on the GIF and select "Copy image address" to get the GIF URL.
+    Sorry for the hassle, I'm working on a better solution. 🙏
+  </p>
+
+
+  <%= render partial: "moments/search_gif", locals: { gifs: @gifs } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <% @gifs&.each do |gif| %>
+    <div class="mb-4">
+      <%= image_tag gif[:tinygif], class: "rounded-lg" %>
+    </div>
+  <% end %>
+</div>
