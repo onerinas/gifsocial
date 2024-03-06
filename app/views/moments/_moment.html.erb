@@ -1,0 +1,14 @@
+<div id="<%= dom_id moment %>">
+  <p class="my-5">
+    <%= moment.wassup %>
+  </p>
+
+  <p class="my-5">
+    <%= image_tag moment.gif_url if moment.gif_url.present? %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "##{moment.id}", moment, class: "underline" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
