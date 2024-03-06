@@ -3,7 +3,7 @@ class MomentsController < ApplicationController
 
   # GET /moments or /moments.json
   def index
-    @moments = Moment.all
+    @moments = Moment.order(created_at: :desc)
   end
 
   # GET /moments/1 or /moments/1.json
