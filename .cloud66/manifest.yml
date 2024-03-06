@@ -1,0 +1,6 @@
+rails:
+  configuration:
+    ruby_version: 3.3.0
+postgresql:
+  configuration:
+    version: 16.2
