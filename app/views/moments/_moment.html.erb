@@ -1,10 +1,9 @@
 <div id="<%= dom_id moment %>" class="text-center">
   <p class="my-5 mx-auto">
-    <%= link_to "#{moment.wassup} ##{moment.id} ", moment, class: "underline" %>
+    <%= link_to "##{moment.id} #{moment.wassup}", moment, class: "underline" %>
   </p>
 
   <p class="my-5">
-    <%#= image_tag moment.gif_url if moment.gif_url.present? %>
     <img src="<%= moment.gif_url %>" alt="<%= moment.wassup %>" class="mx-auto">
   </p>
 
