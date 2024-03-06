@@ -1,0 +1,5 @@
+<% if Rails.env.production? && (fathom_site_id = Rails.application.credentials.fathom_site_id) %>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="<%= fathom_site_id %>" defer></script>
+  <!-- / Fathom -->
+<% end %>
