@@ -15,6 +15,8 @@ class Moment < ApplicationRecord
   def self.search_gif(wassup)
     return [] if wassup.blank?
 
+    wassup.squish!
+
     response = HTTParty.get("https://tenor.googleapis.com/v2/search?q=#{wassup}&key=#{Rails.application.credentials.tenor_api_key}&limit=9")
 
     response["results"].map do |result|
