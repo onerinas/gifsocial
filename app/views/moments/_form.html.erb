@@ -14,18 +14,17 @@
   <div class="my-5">
     <%= form.label :wassup, "Wassup? 👋" %>
     <%= form.text_field :wassup,
+      placeholder: "Just chilling...",
       data: { controller: "moment", action: "input->moment#searchGif" },
       class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :gif_url, "GIF URL" %>
-    <%= form.text_field :gif_url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.hidden_field :gif_url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-
   <%= turbo_frame_tag :search_gif_results do %>
-   <%= render partial: "moments/search_gif", locals: { gifs: @gifs } %>
+    <%= render partial: "moments/search_gif", locals: { gifs: @gifs } %>
   <% end %>
 
   <div class="inline">
