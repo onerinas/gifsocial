@@ -10,7 +10,15 @@ export default class extends Controller {
     if (inputElement) {
       inputElement.value = this.urlValue;
 
+
       const previousGifElement = document.querySelector(".individual-gif.border-4.border-blue-500");
+
+      // De-select if selecting the same gif
+      if (previousGifElement && previousGifElement === this.gifTarget) {
+        previousGifElement.classList.remove("border-4", "border-blue-500");
+        inputElement.value = "";
+        return;
+      }
 
       if (previousGifElement) {
         previousGifElement.classList.remove("border-4", "border-blue-500");
